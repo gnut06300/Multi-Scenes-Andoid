@@ -12,6 +12,7 @@ namespace SojaExiles
 
         public float speed = 5f;
         public float gravity = -15f;
+        [SerializeField] private FixedJoystick joystick;
 
         Vector3 velocity;
 
@@ -21,16 +22,17 @@ namespace SojaExiles
         void Update()
         {
 
-            float x = Input.GetAxis("Horizontal");
-            float z = Input.GetAxis("Vertical");
-
+            /*float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");*/
+            float x = joystick.Horizontal;
+            float z = joystick.Vertical;
             Vector3 move = transform.right * x + transform.forward * z;
 
             controller.Move(move * speed * Time.deltaTime);
 
             velocity.y += gravity * Time.deltaTime;
 
-            controller.Move(velocity * Time.deltaTime);
+            controller.Move(velocity * Time.deltaTime);      
 
         }
     }
