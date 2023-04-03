@@ -58,6 +58,25 @@ public class UILoadScenes : MonoBehaviour
         data.sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
+    public void ShowMenu()
+    {
+        Debug.Log("Boutton appuyé");
+        if (!active)
+        {
+            active = true;
+            menu.SetActive(active);
+            Cursor.lockState = CursorLockMode.None;
+            camera1.GetComponent<SojaExiles.MouseLook>().enabled = false;
+
+        }
+        else
+        {
+            active = false;
+            menu.SetActive(active);
+            Cursor.lockState = CursorLockMode.Locked;
+            camera1.GetComponent<SojaExiles.MouseLook>().enabled = true;
+        }
+    }
     public void UpdateVolume(float volume)
     {
         audioSource.volume = volume;
