@@ -15,6 +15,8 @@ public class UILoadScenes : MonoBehaviour
     public float transitionTime = 1.5f;
     private bool active = false;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject joystickMove;
+    [SerializeField] GameObject joystickCamera;
     [SerializeField] Data data;
     [SerializeField] Camera camera1;
     private AudioSource audioSource;
@@ -65,6 +67,8 @@ public class UILoadScenes : MonoBehaviour
         {
             active = true;
             menu.SetActive(active);
+            joystickMove.SetActive(false);
+            joystickCamera.SetActive(false);
             //Cursor.lockState = CursorLockMode.None;
             camera1.GetComponent<SojaExiles.MouseLook>().enabled = false;
 
@@ -73,6 +77,8 @@ public class UILoadScenes : MonoBehaviour
         {
             active = false;
             menu.SetActive(active);
+            joystickMove.SetActive(true);
+            joystickCamera.SetActive(true);
             //Cursor.lockState = CursorLockMode.Locked;
             camera1.GetComponent<SojaExiles.MouseLook>().enabled = true;
         }
