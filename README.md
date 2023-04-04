@@ -1,4 +1,4 @@
-# Simplon Multi Scenes sur mobile
+# Simplon Multi Scènes sur mobile android
 
 ![Logo IwebProd](https://iwebprod.fr/public/pictures/iwebprod_small.png)
 
