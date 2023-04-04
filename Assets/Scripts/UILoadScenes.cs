@@ -40,7 +40,7 @@ public class UILoadScenes : MonoBehaviour
                 {
                     active = true;
                     menu.SetActive(active);
-                    Cursor.lockState = CursorLockMode.None;
+                    //Cursor.lockState = CursorLockMode.None;
                     camera1.GetComponent<SojaExiles.MouseLook>().enabled = false;
 
                 }
@@ -48,7 +48,7 @@ public class UILoadScenes : MonoBehaviour
                 {
                     active = false;
                     menu.SetActive(active);
-                    Cursor.lockState = CursorLockMode.Locked;
+                    //Cursor.lockState = CursorLockMode.Locked;
                     camera1.GetComponent<SojaExiles.MouseLook>().enabled = true;
                 }
 
@@ -65,7 +65,7 @@ public class UILoadScenes : MonoBehaviour
         {
             active = true;
             menu.SetActive(active);
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.lockState = CursorLockMode.None;
             camera1.GetComponent<SojaExiles.MouseLook>().enabled = false;
 
         }
@@ -73,7 +73,7 @@ public class UILoadScenes : MonoBehaviour
         {
             active = false;
             menu.SetActive(active);
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
             camera1.GetComponent<SojaExiles.MouseLook>().enabled = true;
         }
     }
