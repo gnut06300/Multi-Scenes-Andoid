@@ -354,6 +354,8 @@ MonoBehaviour:
   menu: {fileID: 1743490142247396127}
   transitionTime: 2
   player: {fileID: 1129982056}
+  joystickMove: {fileID: 0}
+  joystickCamera: {fileID: 0}
   data: {fileID: 11400000, guid: 217f6eff016921a47a46cae36b38a209, type: 2}
   camera1: {fileID: 963194227}
 --- !u!224 &867701983 stripped
