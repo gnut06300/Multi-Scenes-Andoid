@@ -289,7 +289,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -354,6 +354,8 @@ MonoBehaviour:
   menu: {fileID: 1743490142247396127}
   transitionTime: 2
   player: {fileID: 1129982056}
+  joystickMove: {fileID: 0}
+  joystickCamera: {fileID: 0}
   data: {fileID: 11400000, guid: 217f6eff016921a47a46cae36b38a209, type: 2}
   camera1: {fileID: 963194227}
 --- !u!224 &867701983 stripped
@@ -896,7 +898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 338.5491
+      value: 361.0687
       objectReference: {fileID: 0}
     - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
       propertyPath: m_LocalScale.x
@@ -912,11 +914,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0000076293945
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 2.296997
       objectReference: {fileID: 0}
     - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
       propertyPath: m_ConstrainProportionsScale
