@@ -5216,6 +5216,10 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1559467051}
+    - target: {fileID: 1927095934754023317, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 1927095934754023319, guid: a9b081014bad86f4a80b60284279d21b, type: 3}
       propertyPath: fixedJoystick
       value: 
@@ -17394,7 +17398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1489.1663
+      value: 1169.3748
       objectReference: {fileID: 0}
     - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
       propertyPath: m_SizeDelta.y
@@ -17402,7 +17406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 3.4516
+      value: 3.4515991
       objectReference: {fileID: 0}
     - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -27750,6 +27754,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1743490143046940608, guid: 44b0399a8c0ca1f46bdb72b56cdd6875, type: 3}
       propertyPath: m_Name
+      value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743490143046940608, guid: 44b0399a8c0ca1f46bdb72b56cdd6875, type: 3}
+      propertyPath: m_TagString
       value: Menu
       objectReference: {fileID: 0}
     - target: {fileID: 1743490143046940609, guid: 44b0399a8c0ca1f46bdb72b56cdd6875, type: 3}

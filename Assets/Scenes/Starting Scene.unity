@@ -804,10 +804,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
-    - target: {fileID: 553627284681120214, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 639009047808637736, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -891,38 +887,6 @@ PrefabInstance:
     - target: {fileID: 639009047808637736, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 700.4224
-      objectReference: {fileID: 0}
-    - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 361.0687
-      objectReference: {fileID: 0}
-    - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 2.296997
-      objectReference: {fileID: 0}
-    - target: {fileID: 3425555375316908418, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea2f7b6de11336c4382bc770e3930d61, type: 3}

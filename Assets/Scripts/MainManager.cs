@@ -9,6 +9,8 @@ public class MainManager : MonoBehaviour
 {
     public static MainManager Instance;
     private GameObject player;
+    private GameObject camera1;
+    private AudioSource audioSource;
 
     private void Awake()
     {
@@ -25,6 +27,7 @@ public class MainManager : MonoBehaviour
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        camera1 = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     [System.Serializable]
@@ -44,6 +47,7 @@ public class MainManager : MonoBehaviour
     {
         yield return SceneManager.LoadSceneAsync(index);
         player = GameObject.FindGameObjectWithTag("Player");
+        camera1 = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     public void LoadData()
@@ -64,7 +68,9 @@ public class MainManager : MonoBehaviour
                 player.GetComponent<CharacterController>().enabled = false;
                 player.transform.position = saveData.position;
                 FindObjectOfType<Scrollbar>().value = saveData.soundVolume;
-                FindObjectOfType<AudioSource>().volume = saveData.soundVolume;
+                audioSource = camera1.GetComponent<AudioSource>();
+                audioSource.volume = saveData.soundVolume;
+                //FindObjectOfType<AudioSource>().volume = saveData.soundVolume;
                 player.GetComponent<CharacterController>().enabled = true;
             }
             else
@@ -74,7 +80,9 @@ public class MainManager : MonoBehaviour
                 player.GetComponent<CharacterController>().enabled = false;
                 player.transform.position = saveData.position;
                 FindObjectOfType<Scrollbar>().value = saveData.soundVolume;
-                FindObjectOfType<AudioSource>().volume = saveData.soundVolume;
+                audioSource = camera1.GetComponent<AudioSource>();
+                audioSource.volume = saveData.soundVolume;
+                //FindObjectOfType<AudioSource>().volume = saveData.soundVolume;
                 player.GetComponent<CharacterController>().enabled = true;
             }
         }
