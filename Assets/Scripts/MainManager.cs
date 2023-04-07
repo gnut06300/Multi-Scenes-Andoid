@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 using UnityEngine.SceneManagement;
 
@@ -31,8 +32,9 @@ public class MainManager : MonoBehaviour
     {
         public Vector3 position;
         public int sectionIndex;
+        public float soundVolume;
     }
-    
+
     public void LoadScene(int index)
     {
         StartCoroutine(LoadSceneCoroutine(index));
@@ -61,6 +63,8 @@ public class MainManager : MonoBehaviour
                 //player.GetComponent<CharacterController>().Move(saveData.position - player.transform.position);
                 player.GetComponent<CharacterController>().enabled = false;
                 player.transform.position = saveData.position;
+                FindObjectOfType<Scrollbar>().value = saveData.soundVolume;
+                FindObjectOfType<AudioSource>().volume = saveData.soundVolume;
                 player.GetComponent<CharacterController>().enabled = true;
             }
             else
@@ -69,6 +73,8 @@ public class MainManager : MonoBehaviour
                 //player.GetComponent<CharacterController>().Move(saveData.position - player.transform.position);
                 player.GetComponent<CharacterController>().enabled = false;
                 player.transform.position = saveData.position;
+                FindObjectOfType<Scrollbar>().value = saveData.soundVolume;
+                FindObjectOfType<AudioSource>().volume = saveData.soundVolume;
                 player.GetComponent<CharacterController>().enabled = true;
             }
         }

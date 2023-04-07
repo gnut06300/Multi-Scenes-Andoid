@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -29,35 +30,19 @@ public class UILoadScenes : MonoBehaviour
             menu.SetActive(active);
         }
         audioSource = camera1.GetComponent<AudioSource>();
+        audioSource.volume = data.soundVolume;
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            FindObjectOfType<Scrollbar>().value = data.soundVolume;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            if(SceneManager.GetActiveScene().buildIndex != 0)
-            {
-                if (!active)
-                {
-                    active = true;
-                    menu.SetActive(active);
-                    //Cursor.lockState = CursorLockMode.None;
-                    camera1.GetComponent<SojaExiles.MouseLook>().enabled = false;
-
-                }
-                else
-                {
-                    active = false;
-                    menu.SetActive(active);
-                    //Cursor.lockState = CursorLockMode.Locked;
-                    camera1.GetComponent<SojaExiles.MouseLook>().enabled = true;
-                }
-
-            }
-        }
         data.position = player.transform.position;
         data.sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        //data.soundVolume = audioSource.volume;
     }
 
     public void ShowMenu()
@@ -67,6 +52,7 @@ public class UILoadScenes : MonoBehaviour
         {
             active = true;
             menu.SetActive(active);
+            FindObjectOfType<Scrollbar>().value = data.soundVolume;
             joystickMove.SetActive(false);
             joystickCamera.SetActive(false);
             //Cursor.lockState = CursorLockMode.None;
@@ -86,13 +72,14 @@ public class UILoadScenes : MonoBehaviour
     public void UpdateVolume(float volume)
     {
         audioSource.volume = volume;
+        data.soundVolume = volume;
     }
 
     public void ChangeScene(int index)
     {
         StartCoroutine(LoadScene(index));
     }
-    
+
     public IEnumerator LoadScene(int index)
     {
         transition.SetTrigger("Start");
@@ -105,6 +92,7 @@ public class UILoadScenes : MonoBehaviour
     {
         public Vector3 position;
         public int sectionIndex;
+        public float soundVolume;
     }
 
     public void SaveDataFile()
@@ -112,6 +100,7 @@ public class UILoadScenes : MonoBehaviour
         SaveData saveData = new SaveData();
         saveData.position = data.position;
         saveData.sectionIndex = data.sceneIndex;
+        saveData.soundVolume = data.soundVolume;
         string json = JsonUtility.ToJson(saveData);
 
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
