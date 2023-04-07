@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -29,6 +30,7 @@ public class UILoadScenes : MonoBehaviour
             menu.SetActive(active);
         }
         audioSource = camera1.GetComponent<AudioSource>();
+        audioSource.volume = data.soundVolume;
     }
 
     // Update is called once per frame
@@ -58,6 +60,7 @@ public class UILoadScenes : MonoBehaviour
         }
         data.position = player.transform.position;
         data.sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        //data.soundVolume = audioSource.volume;
     }
 
     public void ShowMenu()
@@ -67,6 +70,7 @@ public class UILoadScenes : MonoBehaviour
         {
             active = true;
             menu.SetActive(active);
+            FindObjectOfType<Scrollbar>().value = data.soundVolume;
             joystickMove.SetActive(false);
             joystickCamera.SetActive(false);
             //Cursor.lockState = CursorLockMode.None;
@@ -86,6 +90,7 @@ public class UILoadScenes : MonoBehaviour
     public void UpdateVolume(float volume)
     {
         audioSource.volume = volume;
+        data.soundVolume = volume;
     }
 
     public void ChangeScene(int index)
@@ -105,6 +110,7 @@ public class UILoadScenes : MonoBehaviour
     {
         public Vector3 position;
         public int sectionIndex;
+        public float soundVolume;
     }
 
     public void SaveDataFile()
@@ -112,6 +118,7 @@ public class UILoadScenes : MonoBehaviour
         SaveData saveData = new SaveData();
         saveData.position = data.position;
         saveData.sectionIndex = data.sceneIndex;
+        saveData.soundVolume = data.soundVolume;
         string json = JsonUtility.ToJson(saveData);
 
         File.WriteAllText(Application.persistentDataPath + "/savefile.json", json);
